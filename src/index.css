@@ -5,65 +5,65 @@
 
 @layer base {
   :root {
-    --background: 0 0% 98%;
-    --foreground: 240 10% 3.9%;
+    --background: 345 100% 98%;
+    --foreground: 345 10% 15%;
     
-    --card: 0 0% 100%;
-    --card-foreground: 240 10% 3.9%;
+    --card: 345 100% 100%;
+    --card-foreground: 345 10% 10%;
     
-    --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 3.9%;
+    --popover: 345 100% 100%;
+    --popover-foreground: 345 10% 10%;
     
-    --primary: 240 5.9% 10%;
-    --primary-foreground: 0 0% 98%;
+    --primary: 345 83% 61%;
+    --primary-foreground: 345 10% 98%;
     
-    --secondary: 240 4.8% 95.9%;
-    --secondary-foreground: 240 5.9% 10%;
+    --secondary: 25 100% 92%;
+    --secondary-foreground: 345 50% 25%;
     
-    --muted: 240 4.8% 95.9%;
-    --muted-foreground: 240 3.8% 46.1%;
+    --muted: 345 10% 95%;
+    --muted-foreground: 345 15% 45%;
     
-    --accent: 240 4.8% 95.9%;
-    --accent-foreground: 240 5.9% 10%;
+    --accent: 25 95% 75%;
+    --accent-foreground: 345 50% 25%;
     
-    --destructive: 0 84.2% 60.2%;
+    --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 240 5.9% 90%;
-    --input: 240 5.9% 90%;
-    --ring: 240 5.9% 10%;
+    --border: 345 15% 85%;
+    --input: 345 15% 85%;
+    --ring: 345 83% 61%;
     
     --radius: 0.75rem;
   }
  
   .dark {
-    --background: 240 10% 3.9%;
-    --foreground: 0 0% 98%;
+    --background: 345 30% 10%;
+    --foreground: 345 10% 98%;
     
-    --card: 240 10% 3.9%;
-    --card-foreground: 0 0% 98%;
+    --card: 345 30% 12%;
+    --card-foreground: 345 10% 98%;
     
-    --popover: 240 10% 3.9%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 345 30% 12%;
+    --popover-foreground: 345 10% 98%;
     
-    --primary: 0 0% 98%;
-    --primary-foreground: 240 5.9% 10%;
+    --primary: 345 70% 65%;
+    --primary-foreground: 345 10% 10%;
     
-    --secondary: 240 3.7% 15.9%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 25 30% 20%;
+    --secondary-foreground: 345 10% 98%;
     
-    --muted: 240 3.7% 15.9%;
-    --muted-foreground: 240 5% 64.9%;
+    --muted: 345 20% 20%;
+    --muted-foreground: 345 10% 65%;
     
-    --accent: 240 3.7% 15.9%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 25 30% 25%;
+    --accent-foreground: 345 10% 98%;
     
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 345 10% 98%;
     
-    --border: 240 3.7% 15.9%;
-    --input: 240 3.7% 15.9%;
-    --ring: 240 4.9% 83.9%;
+    --border: 345 20% 25%;
+    --input: 345 20% 25%;
+    --ring: 345 60% 65%;
   }
 }
 
@@ -88,11 +88,32 @@
   }
   
   .glass-card {
-    @apply bg-white/90 dark:bg-black/80 backdrop-blur-xl border border-white/20 dark:border-white/10 shadow-sm;
+    @apply bg-white/90 dark:bg-black/80 backdrop-blur-xl border border-primary/20 dark:border-primary/10 shadow-sm;
+  }
+  
+  .love-card {
+    @apply relative overflow-hidden bg-white/90 dark:bg-black/80 backdrop-blur-xl border border-primary/20 dark:border-primary/10 shadow-sm;
+  }
+  
+  .love-card::before {
+    content: "";
+    @apply absolute inset-0 bg-love-gradient-soft opacity-30 dark:opacity-20 -z-10;
   }
   
   .text-balance {
     text-wrap: balance;
+  }
+  
+  .love-link {
+    @apply relative inline-block font-medium text-primary no-underline after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  
+  .btn-love {
+    @apply relative overflow-hidden inline-flex items-center justify-center rounded-md bg-primary text-primary-foreground shadow-md transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:translate-y-[-2px] active:translate-y-[0px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
+  }
+  
+  .btn-love-outline {
+    @apply relative overflow-hidden inline-flex items-center justify-center rounded-md border border-primary/50 bg-transparent text-primary shadow-sm transition-all duration-300 hover:bg-primary/10 hover:border-primary hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2;
   }
 }
 

@@ -28,6 +28,7 @@ export default {
           "BlinkMacSystemFont", 
           "sans-serif"
         ],
+        cursive: ['Playfair Display', 'serif'],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -62,6 +63,28 @@ export default {
         card: {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
+        },
+        love: {
+          100: "#FFF0F3",
+          200: "#FFDEE2",
+          300: "#FFC2CB",
+          400: "#FFA5B4",
+          500: "#FF879D",
+          600: "#FF4D6B",
+          700: "#ea384c",
+          800: "#D22B3D",
+          900: "#B01C2E",
+        },
+        blush: {
+          100: "#FFF5F0",
+          200: "#FDE1D3",
+          300: "#FCCBAF",
+          400: "#FAB68A",
+          500: "#F8A266",
+          600: "#F68D42",
+          700: "#F4781E",
+          800: "#D26413",
+          900: "#A94F0F",
         },
       },
       borderRadius: {
@@ -102,6 +125,18 @@ export default {
           "0%": { backgroundPosition: "-200% 0" },
           "100%": { backgroundPosition: "200% 0" },
         },
+        heartbeat: {
+          "0%": { transform: "scale(1)" },
+          "14%": { transform: "scale(1.15)" },
+          "28%": { transform: "scale(1)" },
+          "42%": { transform: "scale(1.15)" },
+          "70%": { transform: "scale(1)" },
+        },
+        float: {
+          "0%": { transform: "translateY(0px)" },
+          "50%": { transform: "translateY(-10px)" },
+          "100%": { transform: "translateY(0px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -112,9 +147,15 @@ export default {
         "slide-down": "slideDown 0.5s ease-out forwards",
         "pulse-slow": "pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite",
         shimmer: "shimmer 2s infinite linear",
+        heartbeat: "heartbeat 1.5s ease-in-out infinite",
+        float: "float 3s ease-in-out infinite",
       },
       backdropBlur: {
         xs: "2px",
+      },
+      backgroundImage: {
+        'love-gradient': 'linear-gradient(90deg, hsla(341, 91%, 68%, 0.8) 0%, hsla(24, 100%, 83%, 0.8) 100%)',
+        'love-gradient-soft': 'linear-gradient(90deg, rgba(255,207,139,0.15) 0%, rgba(255,77,107,0.15) 100%)',
       },
     },
   },

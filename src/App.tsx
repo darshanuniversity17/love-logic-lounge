@@ -10,6 +10,7 @@ import Layout from './components/layout/Layout';
 import Login from './pages/auth/Login';
 import Signup from './pages/auth/Signup';
 import Verify from './pages/auth/Verify';
+import ForgotPassword from './pages/auth/ForgotPassword';
 import Dashboard from './pages/Dashboard';
 import NotFound from "./pages/NotFound";
 import Index from "./pages/Index";
@@ -29,6 +30,7 @@ const App = () => (
               <Route path="/auth/login" element={<Login />} />
               <Route path="/auth/signup" element={<Signup />} />
               <Route path="/auth/verify" element={<Verify />} />
+              <Route path="/auth/forgot-password" element={<ForgotPassword />} />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="*" element={<NotFound />} />
             </Route>

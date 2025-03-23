@@ -14,6 +14,9 @@ import ForgotPassword from './pages/auth/ForgotPassword';
 import Dashboard from './pages/Dashboard';
 import NotFound from "./pages/NotFound";
 import Index from "./pages/Index";
+import UsersPage from "./pages/users/UsersPage";
+import FavoritesPage from "./pages/users/FavoritesPage";
+import ProfilePage from "./pages/profile/ProfilePage";
 
 const queryClient = new QueryClient();
 
@@ -32,6 +35,9 @@ const App = () => (
               <Route path="/auth/verify" element={<Verify />} />
               <Route path="/auth/forgot-password" element={<ForgotPassword />} />
               <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/users" element={<UsersPage />} />
+              <Route path="/favorites" element={<FavoritesPage />} />
+              <Route path="/profile" element={<ProfilePage />} />
               <Route path="*" element={<NotFound />} />
             </Route>
           </Routes>

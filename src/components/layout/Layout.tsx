@@ -1,14 +1,20 @@
 
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import { initializeTheme } from '../../store/themeSlice';
 import ThemeToggle from '../ui/ThemeToggle';
+import NavigationBar from './NavigationBar';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Heart } from 'lucide-react';
 
 const Layout: React.FC = () => {
   const dispatch = useDispatch();
+  const location = useLocation();
+  
+  // Define routes that are part of the authentication process
+  const authRoutes = ['/auth/login', '/auth/signup', '/auth/verify', '/auth/forgot-password', '/'];
+  const isAuthRoute = authRoutes.includes(location.pathname);
   
   useEffect(() => {
     dispatch(initializeTheme());
@@ -38,6 +44,7 @@ const Layout: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
+            {!isAuthRoute && <NavigationBar />}
             <ThemeToggle />
           </motion.div>
         </div>

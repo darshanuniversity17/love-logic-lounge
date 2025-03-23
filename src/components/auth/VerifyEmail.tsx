@@ -1,6 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { CheckCircle, Clock, RefreshCcw } from 'lucide-react';
 
@@ -8,6 +7,7 @@ const VerifyEmail: React.FC = () => {
   const [verified, setVerified] = useState(false);
   const [countdown, setCountdown] = useState(60);
   const [resending, setResending] = useState(false);
+  const navigate = useNavigate();
   
   useEffect(() => {
     // Simulate verification after 3 seconds
@@ -89,14 +89,12 @@ const VerifyEmail: React.FC = () => {
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
           >
-            <Link to="/dashboard">
-              <motion.button
-                whileTap={{ scale: 0.98 }}
-                className="relative inline-flex h-12 w-full items-center justify-center rounded-md bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-              >
-                Continue to Dashboard
-              </motion.button>
-            </Link>
+            <button
+              onClick={() => navigate('/dashboard')}
+              className="relative inline-flex h-12 w-full items-center justify-center rounded-md bg-primary text-primary-foreground shadow-sm transition-colors hover:bg-primary/90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
+            >
+              Continue to Dashboard
+            </button>
           </motion.div>
         ) : (
           <div className="space-y-4">

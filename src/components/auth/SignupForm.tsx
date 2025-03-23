@@ -1,12 +1,13 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Eye, EyeOff, User, Mail, Lock } from 'lucide-react';
 
 const SignupForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,8 +16,8 @@ const SignupForm: React.FC = () => {
     // Simulate API request
     setTimeout(() => {
       setLoading(false);
-      // Redirect to verification page
-      window.location.href = '/auth/verify';
+      // Use navigate instead of window.location
+      navigate('/auth/verify');
     }, 1500);
   };
   

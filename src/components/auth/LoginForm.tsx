@@ -1,12 +1,13 @@
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Eye, EyeOff, Mail, Lock } from 'lucide-react';
 
 const LoginForm: React.FC = () => {
   const [loading, setLoading] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+  const navigate = useNavigate();
   
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -15,8 +16,8 @@ const LoginForm: React.FC = () => {
     // Simulate API request
     setTimeout(() => {
       setLoading(false);
-      // Redirect to dashboard
-      window.location.href = '/dashboard';
+      // Use navigate instead of window.location
+      navigate('/dashboard');
     }, 1500);
   };
   
